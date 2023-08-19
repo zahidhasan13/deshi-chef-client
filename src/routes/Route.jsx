@@ -5,6 +5,8 @@ import Blog from "../pages/Blog/Blog";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import NotFound from "../pages/NotFound/NotFound"
+import ChefRecipe from "../pages/ChefRecipe/ChefRecipe";
+import RecipeDetails from "../pages/RecipeDetails/RecipeDetails";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +29,16 @@ const router = createBrowserRouter([
           path: "contact",
           element: <Contact></Contact>
         },
+        {
+          path: "recipe/:id",
+          element: <ChefRecipe></ChefRecipe>,
+          loader: ({params}) => fetch(`https://deshi-chef-server-durdantozahid-gmailcom.vercel.app/recipe/${params.id}`)
+        },
+        {
+          path: "/recipeDetails/:id",
+          element: <RecipeDetails></RecipeDetails>,
+          loader: ({params}) => fetch(`https://deshi-chef-server-durdantozahid-gmailcom.vercel.app/recipeDetails/${params.id}`)
+        }
       ]
     },
       {

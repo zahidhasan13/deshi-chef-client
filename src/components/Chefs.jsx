@@ -1,14 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import Chef from "./chef";
+import { DataContext } from "../providers/DataProvider";
 
 const Chefs = () => {
-  const [chefs, setChefs] = useState([]);
-
-  useEffect(() => {
-    fetch("https://deshi-chef-server-durdantozahid-gmailcom.vercel.app/chef")
-      .then((res) => res.json())
-      .then((data) => setChefs(data));
-  }, []);
+    const {chefs} = useContext(DataContext);
   return (
     <section className="bg-white">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
@@ -22,14 +17,9 @@ const Chefs = () => {
           </p>
         </div>
         <div className="lg:grid lg:grid-cols-3 lg:gap-4">
-            {
-                chefs.map(chef => 
-                    <Chef
-                    key = {chef.chefID}
-                    chef={chef}
-                    ></Chef>
-                )
-            }
+          {chefs.map((chef) => (
+            <Chef key={chef.chefID} chef={chef}></Chef>
+          ))}
         </div>
       </div>
     </section>
