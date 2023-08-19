@@ -7,7 +7,7 @@ const Footer = () => {
       <a href="#" className="text-4xl font-semibold text-gray-900 dark:text-white">
           Deshi<span className="text-green-500">Chef</span>    
       </a>
-      <p className="my-6 text-gray-500 dark:text-gray-400">Elevating Tastes with Expertise. A Chef's Journey Through Exquisite Flavors, Crafting Memories with Every Perfect Recipe.</p>
+      <p className="my-6 text-gray-500 dark:text-gray-400">Elevating Tastes with Expertise. A Chefs Journey Through Exquisite Flavors, Crafting Memories with Every Perfect Recipe.</p>
       <ul className="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
           <li>
               <Link to="/" className="mr-4 hover:underline md:mr-6 ">Home</Link>
