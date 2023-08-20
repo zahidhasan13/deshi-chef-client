@@ -18,7 +18,7 @@ const Testimonial = () => {
         </div>
       </div>
       <AutoplaySlider
-        className="h-[400px]"
+        className="h-[300px]"
         organicArrows={true}
         bullets={false}
         mobileTouch={true}
@@ -28,22 +28,8 @@ const Testimonial = () => {
         <div className="bg-white w-full">
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-gray-900">
-                Speechless with how easy this was to integrate
-              </h3>
               <p className="my-4">
-                I recently got my hands on Flowbite Pro, and holy crap, I am
-                speechless with how easy this was to integrate within my
-                application. Most templates are a pain, code is scattered, and
-                near impossible to theme.
-              </p>
-              <p className="my-4">
-                Flowbite has code in one place and I am not joking when I say it
-                took me a matter of minutes to copy the code, customise it and
-                integrate within a Laravel + Vue application.
-              </p>
-              <p className="my-4">
-                If you care for your time, I hands down would go with this.
+              I have been amazed by the variety of recipes on Recipe Website. As a food blogger, I am always looking for inspiration, and this site has been a goldmine of creative dishes that my readers love. Thank you for making my content more exciting!
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
@@ -53,9 +39,9 @@ const Testimonial = () => {
                 alt="profile picture"
               />
               <div className="space-y-0.5 font-medium dark:text-white text-left">
-                <div className="text-gray-700">Bonnie Green</div>
+                <div className="text-gray-700">Sarah Martinez</div>
                 <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Developer at Open AI
+                Food Blogger
                 </div>
               </div>
             </figcaption>
@@ -64,22 +50,8 @@ const Testimonial = () => {
         <div className="bg-white w-full">
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-gray-900">
-                Speechless with how easy this was to integrate
-              </h3>
               <p className="my-4">
-                I recently got my hands on Flowbite Pro, and holy crap, I am
-                speechless with how easy this was to integrate within my
-                application. Most templates are a pain, code is scattered, and
-                near impossible to theme.
-              </p>
-              <p className="my-4">
-                Flowbite has code in one place and I am not joking when I say it
-                took me a matter of minutes to copy the code, customise it and
-                integrate within a Laravel + Vue application.
-              </p>
-              <p className="my-4">
-                If you care for your time, I hands down would go with this.
+              Recipe Website has transformed the way I cook at home. The diverse range of recipes and easy-to-follow instructions have helped me improve my culinary skills.
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
@@ -89,9 +61,9 @@ const Testimonial = () => {
                 alt="profile picture"
               />
               <div className="space-y-0.5 font-medium dark:text-white text-left">
-                <div className="text-gray-700">Bonnie Green</div>
+                <div className="text-gray-700">Alice Johnson</div>
                 <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Developer at Open AI
+                Home Cook Enthusiast
                 </div>
               </div>
             </figcaption>
@@ -100,22 +72,8 @@ const Testimonial = () => {
         <div className="bg-white w-full">
           <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r">
             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-              <h3 className="text-lg font-semibold text-gray-900">
-                Speechless with how easy this was to integrate
-              </h3>
               <p className="my-4">
-                I recently got my hands on Flowbite Pro, and holy crap, I am
-                speechless with how easy this was to integrate within my
-                application. Most templates are a pain, code is scattered, and
-                near impossible to theme.
-              </p>
-              <p className="my-4">
-                Flowbite has code in one place and I am not joking when I say it
-                took me a matter of minutes to copy the code, customise it and
-                integrate within a Laravel + Vue application.
-              </p>
-              <p className="my-4">
-                If you care for your time, I hands down would go with this.
+              I was always intimidated by cooking, but Recipe Website changed that. The step-by-step guides and beginner-friendly recipes gave me the confidence to start experimenting in the kitchen. Now, I look forward to trying new recipes every week!
               </p>
             </blockquote>
             <figcaption className="flex justify-center items-center space-x-3">
@@ -125,9 +83,9 @@ const Testimonial = () => {
                 alt="profile picture"
               />
               <div className="space-y-0.5 font-medium dark:text-white text-left">
-                <div className="text-gray-700">Bonnie Green</div>
+                <div className="text-gray-700">Emily Turner</div>
                 <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Developer at Open AI
+                New Cook
                 </div>
               </div>
             </figcaption>

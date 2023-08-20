@@ -10,6 +10,7 @@ import RecipeDetails from "../pages/RecipeDetails/RecipeDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Terms from "../pages/Terms/Terms";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
         },
         {
           path: "recipe/:id",
-          element: <ChefRecipe></ChefRecipe>,
+          element: <PrivateRoutes><ChefRecipe></ChefRecipe></PrivateRoutes>,
           loader: ({params}) => fetch(`https://deshi-chef-server-durdantozahid-gmailcom.vercel.app/recipe/${params.id}`)
         },
         {
