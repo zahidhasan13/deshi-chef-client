@@ -1,6 +1,28 @@
+/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
-
+import { FaGoogle, FaGithub } from "react-icons/fa6";
+import { Toaster, toast } from "react-hot-toast";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 const Login = () => {
+  const { signInUser } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    signInUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        toast.success("Login Successfully");
+        form.reset();
+      })
+      .catch((err) => {
+        toast.error("Login Error");
+      });
+  };
   return (
     <section className="">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -12,7 +34,7 @@ const Login = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign in to your account
             </h1>
-            <form className="space-y-4 md:space-y-6" action="#">
+            <form onSubmit={handleLogin} className="space-y-4 md:space-y-6">
               <div>
                 <label
                   htmlFor="email"
@@ -78,6 +100,21 @@ const Login = () => {
               >
                 Sign in
               </button>
+              <p className="text-white text-center">or</p>
+              <button
+                type="submit"
+                className="w-full text-white font-medium rounded-lg text-lg px-5 py-2.5 text-center border-2 border-white flex justify-center items-center hover:text-gray-600"
+              >
+                <FaGoogle className="mr-2"></FaGoogle>
+                Sign in with Google
+              </button>
+              <button
+                type="submit"
+                className="w-full text-white font-medium rounded-lg text-lg px-5 py-2.5 text-center border-2 border-white flex justify-center items-center hover:text-gray-600"
+              >
+                <FaGithub className="mr-2"></FaGithub>
+                Sign in with Github
+              </button>
               <p className="text-sm font-light text-white ">
                 Don’t have an account yet?{" "}
                 <Link
@@ -88,6 +125,7 @@ const Login = () => {
                 </Link>
               </p>
             </form>
+            <Toaster />
           </div>
         </div>
       </div>
