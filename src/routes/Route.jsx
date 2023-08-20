@@ -9,6 +9,7 @@ import ChefRecipe from "../pages/ChefRecipe/ChefRecipe";
 import RecipeDetails from "../pages/RecipeDetails/RecipeDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Terms from "../pages/Terms/Terms";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         {
           path: "contact",
           element: <Contact></Contact>
+        },
+        {
+          path: "terms",
+          element: <Terms></Terms>
         },
         {
           path: "recipe/:id",

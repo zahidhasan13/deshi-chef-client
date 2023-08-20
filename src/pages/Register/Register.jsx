@@ -189,12 +189,12 @@ const Register = () => {
                     className="font-light text-gray-500 dark:text-gray-300"
                   >
                     I accept the{" "}
-                    <a
+                    <Link
                       className="font-medium text-gray-600 hover:underline"
-                      href="#"
+                      to="/terms"
                     >
                       Terms and Conditions
-                    </a>
+                    </Link>
                   </label>
                 </div>
               </div>
