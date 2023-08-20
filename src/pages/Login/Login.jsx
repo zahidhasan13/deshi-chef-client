@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa6";
 import { Toaster, toast } from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
+    const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -18,9 +20,37 @@ const Login = () => {
         const user = result.user;
         toast.success("Login Successfully");
         form.reset();
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       })
       .catch((err) => {
         toast.error("Login Error");
+      });
+  };
+
+  const handleGoogleSignIn = (e) => {
+    e.preventDefault();
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        toast.success("Google signed in successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error("Google signed in failed");
+      });
+  };
+  const handleGithubSignIn = (e) => {
+    e.preventDefault();
+    signInWithGithub()
+      .then((result) => {
+        const user = result.user;
+        toast.success("Google signed in successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error("Google signed in failed");
       });
   };
   return (
@@ -102,6 +132,7 @@ const Login = () => {
               </button>
               <p className="text-white text-center">or</p>
               <button
+                onClick={handleGoogleSignIn}
                 type="submit"
                 className="w-full text-white font-medium rounded-lg text-lg px-5 py-2.5 text-center border-2 border-white flex justify-center items-center hover:text-gray-600"
               >
@@ -109,6 +140,7 @@ const Login = () => {
                 Sign in with Google
               </button>
               <button
+                onClick={handleGithubSignIn}
                 type="submit"
                 className="w-full text-white font-medium rounded-lg text-lg px-5 py-2.5 text-center border-2 border-white flex justify-center items-center hover:text-gray-600"
               >

@@ -21,7 +21,7 @@ const Header = () => {
             <div className="flex items-center lg:order-2">
                 <div>
                     {
-                        user && <img src={user.photoURL} alt="" />
+                        user && <span className="mr-2" title={user.displayName}>{user.displayName}</span>
                     }
                 </div>
                 <div>

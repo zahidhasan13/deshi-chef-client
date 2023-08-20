@@ -1,14 +1,17 @@
 /* eslint-disable no-unused-vars */
-import { useContext, useState } from "react";
-import { FaGithub, FaGoogle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider";
-import { Toaster, toast } from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
+import { useContext, useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
+import { FaGithub, FaGoogle } from "react-icons/fa6";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
   const [accepted, setAccepted] = useState(false);
-  const { createUser, user } = useContext(AuthContext);
+  const { createUser, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+
   const handlesignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -29,21 +32,48 @@ const Register = () => {
         console.log(user);
         toast.success("User created successfully");
         form.reset();
-        updateUserData(user, name, photo);
+        updateUserData(user, name);
+        setTimeout(() => {
+          navigate("/login");
+        }, 1000);
       })
       .catch((error) => {
         toast.error("User creation failed");
       });
 
-      // Update profile
-      const updateUserData = (user, name, photo) => {
-        updateProfile(user, {
-          displayName : name,
-          photoURL: photo,
-        })
+    // Update profile
+    const updateUserData = (user, name) => {
+      updateProfile(user, {
+        displayName: name,
+      })
         .then(() => {})
-        .catch(() => {})
-      }
+        .catch(() => {});
+    };
+  };
+
+  const handleGoogleSignIn = (e) => {
+    e.preventDefault();
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        toast.success("Google signed in successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error("Google signed in failed");
+      });
+  };
+  const handleGithubSignIn = (e) => {
+    e.preventDefault();
+    signInWithGithub()
+      .then((result) => {
+        const user = result.user;
+        toast.success("Google signed in successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error("Google signed in failed");
+      });
   };
 
   const handleChecked = (e) => {
@@ -181,6 +211,7 @@ const Register = () => {
               </button>
               <p className="text-white text-center">or</p>
               <button
+                onClick={handleGoogleSignIn}
                 type="submit"
                 className="w-full text-white font-medium rounded-lg text-lg px-5 py-2.5 text-center border-2 border-white flex justify-center items-center hover:text-gray-600"
               >
@@ -188,6 +219,7 @@ const Register = () => {
                 Sign in with Google
               </button>
               <button
+                onClick={handleGithubSignIn}
                 type="submit"
                 className="w-full text-white font-medium rounded-lg text-lg px-5 py-2.5 text-center border-2 border-white flex justify-center items-center hover:text-gray-600"
               >
