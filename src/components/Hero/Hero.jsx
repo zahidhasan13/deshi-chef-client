@@ -1,40 +1,74 @@
-import AwesomeSlider  from 'react-awesome-slider';
-import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import 'react-awesome-slider/dist/styles.css';
-import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
-import "./Hero.css"
-
+import AwesomeSlider from "react-awesome-slider";
+import withAutoplay from "react-awesome-slider/dist/autoplay";
+import "react-awesome-slider/dist/styles.css";
+import "react-awesome-slider/dist/custom-animations/cube-animation.css";
+import "./Hero.css";
 
 const Hero = () => {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
-    return (
-    <AutoplaySlider className='h-[400px]' bullets={false} buttons={false} mobileTouch={true} play={true} interval={3000}>
-    <div className='slide1 w-full h-full'>
-      <h1 className='text-6xl text-white font-bold text-center my-20'>Delicious</h1>
-    </div>
-    <div className='slide1 w-full'>
-    <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
-        <div className="mr-auto place-self-center lg:col-span-7">
-            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Payments tool for software companies</h1>
-            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.</p>
-            <a href="#" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                Get started
-                <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-            </a>
-            <a href="#" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                Speak to Sales
-            </a> 
+  return (
+    <AutoplaySlider
+      className="h-[400px]"
+      bullets={false}
+      buttons={false}
+      mobileTouch={true}
+      play={true}
+      interval={3000}
+    >
+      <div className="slide1 w-full">
+        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
+          <div className="mr-auto place-self-center lg:col-span-7">
+            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+              Elevate Your Culinary Adventures
+            </h1>
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+              Explore a world of flavors with our diverse collection of recipes.
+            </p>
+          </div>
+          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img
+              src="https://namastedesi.in/wp-content/uploads/2022/09/4.png"
+              alt="mockup"
+            />
+          </div>
         </div>
-        <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img src="https://namastedesi.in/wp-content/uploads/2022/09/4.png" alt="mockup"/>
-        </div>                
-    </div>
-    </div>
-    <div className='slide1 w-full h-full'>
-      <h1 className='text-6xl text-white font-bold text-center my-20'>Spicy</h1>
-    </div>
-  </AutoplaySlider>
-    );
+      </div>
+      <div className="slide1 w-full">
+        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
+          <div className="mr-auto place-self-center lg:col-span-7">
+            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+            Join Our Culinary Community
+            </h1>
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            Connect with fellow food enthusiasts and share your passion for cooking.
+            </p>
+          </div>
+          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img
+              src="https://pakistanatlas.com/wp-content/uploads/2020/09/Pakistani-Food_0035_36-Seekh-Kabab.png"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="slide1 w-full">
+        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
+          <div className="mr-auto place-self-center lg:col-span-7">
+            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+            Cooking Made Simple
+            </h1>
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            Unlock the joy of cooking with our easy-to-follow recipes and expert tips.
+            </p>
+          </div>
+          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img
+              src="https://www.priyom.in/wp-content/uploads/2022/05/recipe-3.png"
+            />
+          </div>
+        </div>
+      </div>
+    </AutoplaySlider>
+  );
 };
 
 export default Hero;
