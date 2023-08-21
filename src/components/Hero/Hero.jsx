@@ -10,10 +10,9 @@ const Hero = () => {
     <AutoplaySlider
       className="h-[400px]"
       bullets={false}
-      buttons={false}
       mobileTouch={true}
       play={true}
-      interval={3000}
+      interval={2000}
     >
       <div className="slide1 w-full">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">

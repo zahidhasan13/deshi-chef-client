@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import Chef from "./chef";
 import { DataContext } from "../providers/DataProvider";
+import Chef from "./Chef";
 
 const Chefs = () => {
     const {chefs} = useContext(DataContext);
@@ -16,7 +16,7 @@ const Chefs = () => {
             elements built with the utility classes from Tailwind
           </p>
         </div>
-        <div className="lg:grid lg:grid-cols-3 lg:gap-4">
+        <div className="lg:grid lg:grid-cols-4 lg:gap-4">
           {chefs.map((chef) => (
             <Chef key={chef.chefID} chef={chef}></Chef>
           ))}
